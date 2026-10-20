@@ -30,8 +30,8 @@ For the LIT settlement:
 
 - `intervalsSettled`: 15
 - `intervalsAccrued`: 1
-- `spanStart`: 1792223721 (2026-10-17T08:15:21Z)
-- `spanEnd`: 1792227321 (2026-10-17T09:15:21Z)
+- `spanStart`: 1792223721 (2026-10-17T07:55:21Z)
+- `spanEnd`: 1792227321 (2026-10-17T08:55:21Z)
 - settled wall-clock span: 54,000 seconds (15 x 3,600)
 - accrued span: 3,600 seconds
 - forgiven: 50,400 seconds (14 hourly intervals)
