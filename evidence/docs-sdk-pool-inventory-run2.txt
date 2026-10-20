@@ -1,0 +1,76 @@
+$ tsx poc/docs-sdk-pool-inventory.ts
+SDK 0.32.1 node_modules/@somnia-chain/markets-sdk/docs/PERPS.md:3
+  "Perps are live on testnet: `BTC/USDSO:USDSO` and `ETH/USDSO:USDSO`"
+node_modules/@somnia-chain/markets-sdk/docs/PERPS.md:571
+  "Testnet today has 10 pools, four of them restricted `SBTC*` arena markets."
+
+chain 50383 (hideki), block 28695209
+factory 0xE631fAEE547baeE07353E290f0562ea67d856560
+raw getPerpPools(): 21
+getPerpPoolStatuses(): 21 pools, 0 restricted, 21 registered, 21 tradeable
+SBTC* base tokens: 0; SWBTC* base tokens: 0 (none)
+
+symbol      restricted  registered  tradeable
+BTC          false       true        true
+ETH          false       true        true
+SOL          false       true        true
+HYPE         false       true        true
+XRP          false       true        true
+DOGE         false       true        true
+BNB          false       true        true
+ADA          false       true        true
+SUI          false       true        true
+LINK         false       true        true
+AVAX         false       true        true
+XLM          false       true        true
+NEAR         false       true        true
+WLD          false       true        true
+TAO          false       true        true
+ZEC          false       true        true
+PUMP         false       true        true
+1000PEPE     false       true        true
+VVV          false       true        true
+LIT          false       true        true
+ZRO          false       true        true
+
+SDK listPerpPoolStatuses(): 21 pools, 0 restricted, 21 tradeable, 0 undetermined (blocks 28695312..28695348)
+docs intro names 2 markets vs chain 21; intro matches: false
+docs pools 10 vs chain 21; docs restricted 4 vs chain 0
+=> docs match hideki: false
+
+chain 50312 (shannon), block 519473521
+factory 0x516d2cb6de41bE98444e887793946E65989Ba07b
+raw getPerpPools(): 24
+getPerpPoolStatuses(): 24 pools, 5 restricted, 24 registered, 19 tradeable
+SBTC* base tokens: 0; SWBTC* base tokens: 5 (SWBTC, SWBTCA, SWBTCB, SWBTCC, SWBTCD)
+
+symbol      restricted  registered  tradeable
+WBTC         false       true        true
+WETH         false       true        true
+WSOL         false       true        true
+WADA         false       true        true
+WXRP         false       true        true
+WBNB         false       true        true
+SWBTC        true        true        false
+SWBTCA       true        true        false
+SWBTCB       true        true        false
+SWBTCC       true        true        false
+SWBTCD       false       true        true
+HYPE         false       true        true
+DOGE         false       true        true
+SUI          false       true        true
+AVAX         false       true        true
+XLM          false       true        true
+NEAR         false       true        true
+WLD          false       true        true
+TAO          false       true        true
+LINK         false       true        true
+SWETH        true        true        false
+SWDOGE       false       true        true
+SWBNB        false       true        true
+SWSOL        false       true        true
+docs intro names 2 markets vs chain 24; intro matches: false
+docs pools 10 vs chain 24; docs restricted 4 vs chain 5
+=> docs match shannon: false
+
+Wrote evidence/docs-sdk-pool-inventory.json

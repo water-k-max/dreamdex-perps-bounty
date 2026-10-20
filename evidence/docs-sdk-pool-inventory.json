@@ -1,8 +1,5 @@
 {
-  "capturedAt": "2026-10-20T17:52:53.658Z",
-  "chainId": 50383,
-  "blockNumber": "28668621",
-  "factory": "0xE631fAEE547baeE07353E290f0562ea67d856560",
+  "capturedAt": "2026-10-20T18:37:27.768Z",
   "docs": {
     "file": "node_modules/@somnia-chain/markets-sdk/docs/PERPS.md",
     "line": 571,
@@ -18,220 +15,481 @@
       "ETH"
     ]
   },
-  "rawGetPerpPoolsCount": 21,
-  "chain": {
-    "statusesCount": 21,
-    "restrictedCount": 0,
-    "registeredCount": 21,
-    "tradeableCount": 21,
-    "sbtcCount": 0,
-    "rows": [
-      {
-        "symbol": "BTC",
-        "pool": "0x4181dd08E73BbCdd1Ba3E615A18f6abD941b94C0",
-        "baseToken": "0xa77fA353dAC50DE5c15676AC910C221A4d2Bd6b5",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
+  "deployments": [
+    {
+      "label": "hideki",
+      "chainId": 50383,
+      "rpcUrl": "https://api.hideki2.infra.testnet.somnia.network",
+      "blockNumber": "28695209",
+      "factory": "0xE631fAEE547baeE07353E290f0562ea67d856560",
+      "rawGetPerpPoolsCount": 21,
+      "chain": {
+        "statusesCount": 21,
+        "restrictedCount": 0,
+        "registeredCount": 21,
+        "tradeableCount": 21,
+        "sbtcCount": 0,
+        "sbtcSymbols": [],
+        "swbtcCount": 0,
+        "swbtcSymbols": [],
+        "rows": [
+          {
+            "symbol": "BTC",
+            "pool": "0x4181dd08E73BbCdd1Ba3E615A18f6abD941b94C0",
+            "baseToken": "0xa77fA353dAC50DE5c15676AC910C221A4d2Bd6b5",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "ETH",
+            "pool": "0xD6Cb1DD58580B84D76068aC21594219ce03aeddf",
+            "baseToken": "0x1516CcebcA301d0651bc27dCDF9b1c2f18C3b4cd",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SOL",
+            "pool": "0xB483ec1fb34996638677c20ab087b16F1896FA53",
+            "baseToken": "0x83B066da8e10839f3683C0b46943357B2cBf629E",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "HYPE",
+            "pool": "0x63B47eD4A7DE0FdE659b0d82441dD74828b7297A",
+            "baseToken": "0x32d7D9B4e07fE76382Dbd9f3C7BeE3b513505B87",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "XRP",
+            "pool": "0x7058579F3248559963f79AdB937c6De9f953E060",
+            "baseToken": "0xE4DDba6C087Ba15298eCe0939F6D69A5d5542FAd",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "DOGE",
+            "pool": "0xC410012e39765Cd5f772e84BAcB19554AEC040Df",
+            "baseToken": "0x683e4fb09e078B6E4eF914cC64f68103Ae2CFF54",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "BNB",
+            "pool": "0x3D2A99fE1e2BdEaA25024515A2D2202DAF9531aD",
+            "baseToken": "0x667954B7eB08f608f5454b91bFD98c2C78A3Aca8",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "ADA",
+            "pool": "0x34fa62909f77699a7a6278D992F72Ff31c7a619D",
+            "baseToken": "0xB987a674df44E929e5E7a0c1157da9Ad669447e0",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SUI",
+            "pool": "0x1Be21287cfB865a7c462Ff3c4f275E70BcccefE4",
+            "baseToken": "0x3b2b65C0224343522B17E960282952470F643830",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "LINK",
+            "pool": "0xf71b619450baFe953F47b9b556416A3A67b443b5",
+            "baseToken": "0xB2221107e55a53409cef0E83ED1b29c8879D0f72",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "AVAX",
+            "pool": "0xde9762B6b441133D1314C68864ae4e63A6eE45C7",
+            "baseToken": "0x771ADa7EEb4ba277cD3e5f184baf71E59C78cc65",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "XLM",
+            "pool": "0x74b05B9B8c8F180b53b7891018F3B254B3E658C9",
+            "baseToken": "0xbCdED4e7B8C4EB0A01f632e2C283ca3C8A9a141a",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "NEAR",
+            "pool": "0x1cD15ae8bFf0FE0a7F49233BE8b90734775bA454",
+            "baseToken": "0xC772E0E3331bae405824038996CEcce9a2206cf3",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WLD",
+            "pool": "0x0F464d57c1FD839E4d87A408BBcCDAb8f77E6394",
+            "baseToken": "0x3B5caa24D95C67337e79E7B77F7d65d06f823732",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "TAO",
+            "pool": "0xD9b6A347A3Ae9FD6BA21179D3343F2c8A922F697",
+            "baseToken": "0x2533113591243cD476930aEA327Eace664639b85",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "ZEC",
+            "pool": "0x2a73129F26917124bd2A47a9B355C395C537F050",
+            "baseToken": "0xef2F5E45582C879637cD537345c0e3147FCdBc24",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "PUMP",
+            "pool": "0x76c981a52530cdF9497559140aAfCd8CD16836E7",
+            "baseToken": "0x6c4a5181878ABE585Fd1Ff4D1070FD95AeA004Eb",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "1000PEPE",
+            "pool": "0xfA9B9e50CC1745113d57893991aF200a74c86B6f",
+            "baseToken": "0x9f1f14Bc9B603dCcd13B33004ef08345941Be1c0",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "VVV",
+            "pool": "0x352636aB146039851Ef06D6367A106d5FB4E6409",
+            "baseToken": "0xe70769Fa334C05277742531A27c774B93322c345",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "LIT",
+            "pool": "0xDCb0Ad226727b2cE92857F0aF5751389d42B2A3f",
+            "baseToken": "0xDD27064967CaDba80f177BF692f6d2901cbf85F6",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "ZRO",
+            "pool": "0x2a1822b02039DDf0e293F3F7243673fc03EAF16c",
+            "baseToken": "0xCAacB7C35A41f4E188a54FB074daF4fA09538BE0",
+            "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          }
+        ]
       },
-      {
-        "symbol": "ETH",
-        "pool": "0xD6Cb1DD58580B84D76068aC21594219ce03aeddf",
-        "baseToken": "0x1516CcebcA301d0651bc27dCDF9b1c2f18C3b4cd",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
+      "sdkListPerpPoolStatuses": {
+        "blockRange": [
+          "28695312",
+          "28695348"
+        ],
+        "count": 21,
+        "restrictedCount": 0,
+        "tradeableCount": 21,
+        "undeterminedCount": 0
       },
-      {
-        "symbol": "SOL",
-        "pool": "0xB483ec1fb34996638677c20ab087b16F1896FA53",
-        "baseToken": "0x83B066da8e10839f3683C0b46943357B2cBf629E",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "HYPE",
-        "pool": "0x63B47eD4A7DE0FdE659b0d82441dD74828b7297A",
-        "baseToken": "0x32d7D9B4e07fE76382Dbd9f3C7BeE3b513505B87",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "XRP",
-        "pool": "0x7058579F3248559963f79AdB937c6De9f953E060",
-        "baseToken": "0xE4DDba6C087Ba15298eCe0939F6D69A5d5542FAd",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "DOGE",
-        "pool": "0xC410012e39765Cd5f772e84BAcB19554AEC040Df",
-        "baseToken": "0x683e4fb09e078B6E4eF914cC64f68103Ae2CFF54",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "BNB",
-        "pool": "0x3D2A99fE1e2BdEaA25024515A2D2202DAF9531aD",
-        "baseToken": "0x667954B7eB08f608f5454b91bFD98c2C78A3Aca8",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "ADA",
-        "pool": "0x34fa62909f77699a7a6278D992F72Ff31c7a619D",
-        "baseToken": "0xB987a674df44E929e5E7a0c1157da9Ad669447e0",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "SUI",
-        "pool": "0x1Be21287cfB865a7c462Ff3c4f275E70BcccefE4",
-        "baseToken": "0x3b2b65C0224343522B17E960282952470F643830",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "LINK",
-        "pool": "0xf71b619450baFe953F47b9b556416A3A67b443b5",
-        "baseToken": "0xB2221107e55a53409cef0E83ED1b29c8879D0f72",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "AVAX",
-        "pool": "0xde9762B6b441133D1314C68864ae4e63A6eE45C7",
-        "baseToken": "0x771ADa7EEb4ba277cD3e5f184baf71E59C78cc65",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "XLM",
-        "pool": "0x74b05B9B8c8F180b53b7891018F3B254B3E658C9",
-        "baseToken": "0xbCdED4e7B8C4EB0A01f632e2C283ca3C8A9a141a",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "NEAR",
-        "pool": "0x1cD15ae8bFf0FE0a7F49233BE8b90734775bA454",
-        "baseToken": "0xC772E0E3331bae405824038996CEcce9a2206cf3",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "WLD",
-        "pool": "0x0F464d57c1FD839E4d87A408BBcCDAb8f77E6394",
-        "baseToken": "0x3B5caa24D95C67337e79E7B77F7d65d06f823732",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "TAO",
-        "pool": "0xD9b6A347A3Ae9FD6BA21179D3343F2c8A922F697",
-        "baseToken": "0x2533113591243cD476930aEA327Eace664639b85",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "ZEC",
-        "pool": "0x2a73129F26917124bd2A47a9B355C395C537F050",
-        "baseToken": "0xef2F5E45582C879637cD537345c0e3147FCdBc24",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "PUMP",
-        "pool": "0x76c981a52530cdF9497559140aAfCd8CD16836E7",
-        "baseToken": "0x6c4a5181878ABE585Fd1Ff4D1070FD95AeA004Eb",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "1000PEPE",
-        "pool": "0xfA9B9e50CC1745113d57893991aF200a74c86B6f",
-        "baseToken": "0x9f1f14Bc9B603dCcd13B33004ef08345941Be1c0",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "VVV",
-        "pool": "0x352636aB146039851Ef06D6367A106d5FB4E6409",
-        "baseToken": "0xe70769Fa334C05277742531A27c774B93322c345",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "LIT",
-        "pool": "0xDCb0Ad226727b2cE92857F0aF5751389d42B2A3f",
-        "baseToken": "0xDD27064967CaDba80f177BF692f6d2901cbf85F6",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
-      },
-      {
-        "symbol": "ZRO",
-        "pool": "0x2a1822b02039DDf0e293F3F7243673fc03EAF16c",
-        "baseToken": "0xCAacB7C35A41f4E188a54FB074daF4fA09538BE0",
-        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
-        "restricted": false,
-        "registered": true,
-        "tradeable": true
+      "summary": {
+        "matches": false,
+        "introMatches": false,
+        "liveMarketCount": 21,
+        "poolCountDelta": 11,
+        "restrictedCountDelta": -4
       }
-    ]
-  },
-  "sdkListPerpPoolStatuses": {
-    "blockRange": [
-      "28668689",
-      "28668727"
-    ],
-    "count": 21,
-    "restrictedCount": 0,
-    "tradeableCount": 21,
-    "undeterminedCount": 0
-  },
-  "summary": {
-    "matches": false,
-    "introMatches": false,
-    "liveMarketCount": 21,
-    "poolCountDelta": 11,
-    "restrictedCountDelta": -4
-  }
+    },
+    {
+      "label": "shannon",
+      "chainId": 50312,
+      "rpcUrl": "https://api.infra.testnet.somnia.network",
+      "blockNumber": "519473521",
+      "factory": "0x516d2cb6de41bE98444e887793946E65989Ba07b",
+      "rawGetPerpPoolsCount": 24,
+      "chain": {
+        "statusesCount": 24,
+        "restrictedCount": 5,
+        "registeredCount": 24,
+        "tradeableCount": 19,
+        "sbtcCount": 0,
+        "sbtcSymbols": [],
+        "swbtcCount": 5,
+        "swbtcSymbols": [
+          "SWBTC",
+          "SWBTCA",
+          "SWBTCB",
+          "SWBTCC",
+          "SWBTCD"
+        ],
+        "rows": [
+          {
+            "symbol": "WBTC",
+            "pool": "0x3892A5179F8eA0C810c45d1630546c0317b0e5B6",
+            "baseToken": "0x4e85DC48a70DA1298489d5B6FC2492767d98f384",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WETH",
+            "pool": "0x6A7224a4Ad765D6134c4F29200E67B1f6b62c29e",
+            "baseToken": "0x4d8E02BBfCf205828A8352Af4376b165E123D7b0",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WSOL",
+            "pool": "0x4d3892D19e684677615b83ec2c912085A08472aF",
+            "baseToken": "0x2f0A4Ec77767A18acdFfb91E6F148E9f75090EDD",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WADA",
+            "pool": "0x440F5a79857cd632ae45439410969C3f4049cc41",
+            "baseToken": "0xb4b42262CBAfcF6E028d1be891c601B46e0358b6",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WXRP",
+            "pool": "0x996d36787CfC6569037039730D8cf82Ad29c8F56",
+            "baseToken": "0x5C15546392Dc0ED33721fAD7D47e8F1C7c07C7b0",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WBNB",
+            "pool": "0x11c8d997e291A83a59D86dD2cDE7ffcb0ae66798",
+            "baseToken": "0x7fbba0F87ef0E5bDEee06C6EFF8E8b954033C410",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SWBTC",
+            "pool": "0x961E81c074F2269BE3afD6b7B8B5A8A729eD1423",
+            "baseToken": "0x96502b917E86E5B65BFb3456B73b8E10e7E8fE8A",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": true,
+            "registered": true,
+            "tradeable": false
+          },
+          {
+            "symbol": "SWBTCA",
+            "pool": "0x73386BF06b3df26025c09Ce8f48c87A0C7E135E7",
+            "baseToken": "0x249c8ecb7Ceca1ffbce20a8025474D81a6e58483",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": true,
+            "registered": true,
+            "tradeable": false
+          },
+          {
+            "symbol": "SWBTCB",
+            "pool": "0xf18d319f823759c3F1dcd6DE9268b89ac74BF0a9",
+            "baseToken": "0x3bc05c556e710a7557d813AB79A6360866710dF8",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": true,
+            "registered": true,
+            "tradeable": false
+          },
+          {
+            "symbol": "SWBTCC",
+            "pool": "0x50B817FbE3772548a5E5769AE879Ffdfc9b50ac5",
+            "baseToken": "0x09BE0F7c53c1c10ea8CB4a028DE15360c14cA7DB",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": true,
+            "registered": true,
+            "tradeable": false
+          },
+          {
+            "symbol": "SWBTCD",
+            "pool": "0xBf01e5EEe5685AaC4e4F831f09b052bCB1E2f713",
+            "baseToken": "0x9CCc761544730D4d24A2f3d69b0193Dd9fCc06fc",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "HYPE",
+            "pool": "0xA84c863A3D07257D80CfCd092Ab2103b083882B9",
+            "baseToken": "0x6032fD3cb936F540Dcb9CAbE084BFFB112622E3D",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "DOGE",
+            "pool": "0xb56876C67f589B0E0c544d07BE5dc7Cc727095F2",
+            "baseToken": "0x7286Ac4B5AA0176528b9a3e35bAf67Ec934d8c4b",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SUI",
+            "pool": "0x02c8eEb441FE0FbFa0AaBb4A9E3d7E61D50b11FA",
+            "baseToken": "0x515aCe6D2872705e94518c62F27A25D1D1EBED70",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "AVAX",
+            "pool": "0x6b3f5CE2DE5Cb9c2F6eD8D7aB6c82cf8267129EA",
+            "baseToken": "0xAc8F34AebF33E1D2882215f255Fd74D3Ca39479A",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "XLM",
+            "pool": "0x2322676D298ecCfF4591d2e0e82E70e6642C5acE",
+            "baseToken": "0xad658564A597311BFfb132BbFF8B3D0A7017be03",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "NEAR",
+            "pool": "0x9369D23FF83bCFc3180ad9199e859D640dEf3e02",
+            "baseToken": "0x826C890bce24EB6d6D7E4f16AB4387124200B22F",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "WLD",
+            "pool": "0x1a2fF56F9B1C72F01A41D9253b6838b4be5BFBBE",
+            "baseToken": "0x98Fe3D8418135d70064f2fe35a8F1DcF335472f0",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "TAO",
+            "pool": "0x8644AD99F6504D1026c5E21f9eb544067DeD814E",
+            "baseToken": "0x05B70f2e98f83d3685879fF5A9cA404B8cA18D90",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "LINK",
+            "pool": "0xef7ed005D2271A4e8B937778B1fCA4B8A82Ca330",
+            "baseToken": "0x9f72680d9EF6473C77503cbae7C88346dB4064b0",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SWETH",
+            "pool": "0xcf8227e5B2F1025c05C62354C93f57c152C8BF29",
+            "baseToken": "0xB256c6dc9f117304e35D512184ca39aa319849cE",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": true,
+            "registered": true,
+            "tradeable": false
+          },
+          {
+            "symbol": "SWDOGE",
+            "pool": "0x25F80B87482F49b96E25b072674dF3e2F6006Ba4",
+            "baseToken": "0x6e1B367c859046F154048b85Ae95cd8352036074",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SWBNB",
+            "pool": "0x791Cdb5a81FB6Bc210785ffaBd1021beb51714D1",
+            "baseToken": "0x5F2190A4c97273C202CE2dfB421B29898b39bd36",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          },
+          {
+            "symbol": "SWSOL",
+            "pool": "0xbaDeaE80340b30cbBA2a633AaFd685aaE394C42B",
+            "baseToken": "0xCa4dc36CC324bF65b6AD6E6F69B4A51fBb3A9afF",
+            "marginBank": "0xdd4A14A2763FDa39b9759D2D4150DB0e0f085C4E",
+            "restricted": false,
+            "registered": true,
+            "tradeable": true
+          }
+        ]
+      },
+      "summary": {
+        "matches": false,
+        "introMatches": false,
+        "liveMarketCount": 24,
+        "poolCountDelta": 14,
+        "restrictedCountDelta": 1
+      }
+    }
+  ]
 }

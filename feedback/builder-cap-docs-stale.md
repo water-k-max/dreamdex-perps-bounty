@@ -1,4 +1,14 @@
-# Testnet builder-fee docs say 100 BPS on every pool and 0 on testnet; perp pools cap at 10 BPS
+# WITHDRAWN — do not submit: Testnet builder-fee docs say 100 BPS on every pool and 0 on testnet; perp pools cap at 10 BPS
+
+> **Withdrawn 2026-10-20 after a scope re-check.** Both quoted pages are explicitly
+> SpotPool documentation: `errors.md` places the "100000 cap" sentence under
+> `## SpotPool errors` → `### Builder codes`, and `functions.md` opens with
+> `## SpotPool / OrderBook`. The perps SDK docs (`PERPS.md:41-49`) state no numeric
+> cap and tell callers to read `getMaxBuilderFeeBpsTimes1k(pool)`. The 10 BPS perp
+> cap and the 100 BPS spot cap are therefore different contracts, not a docs
+> contradiction. The spot pages do still contradict each other ("every pool on
+> both networks" vs "0 on testnet"), but that is a spot issue outside this
+> perps bounty. Keep this file only as an audit trail; do not submit it.
 
 Severity: normal
 Area: docs
