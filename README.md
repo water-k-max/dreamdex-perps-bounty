@@ -43,6 +43,7 @@ Read-only baseline:
 
 ```bash
 pnpm probe:markets
+pnpm probe:reads
 pnpm typecheck
 ```
 

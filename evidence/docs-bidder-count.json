@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-10-20T14:39:15.248Z",
+  "chainId": 50383,
+  "blockNumberBefore": "28552599",
+  "blockNumberAfter": "28552620",
+  "marginBank": "0x478769e1177c0773c43a593dccc4ad15f15f1394",
+  "liquidationEngine": "0xA66d3C24Ad4a389d863846905D8173e1017e9F4D",
+  "config": {
+    "address": "0xA66d3C24Ad4a389d863846905D8173e1017e9F4D",
+    "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+    "penaltyBps": "100",
+    "minSpreadBps": "50",
+    "maxSpreadBps": "500",
+    "maxVolumePerBlock": "100000000000000000000000",
+    "bidderCount": "1"
+  },
+  "bidders": [
+    {
+      "address": "0xAF327764345c2f54C1F2bc3322D28E4f633793b9",
+      "runtimeCodeBytes": 176
+    }
+  ],
+  "docs": {
+    "url": "https://app.testnet.dreamdex.io/docs/trading/perps-testnet/margin-and-liquidations",
+    "quote": "No backstop bidders are registered on testnet, so the later stages come in sooner."
+  }
+}

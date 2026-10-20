@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-10-20T14:39:28.250Z",
+  "chainId": 50383,
+  "docs": {
+    "url": "https://app.testnet.dreamdex.io/docs/trading/perps-testnet/funding",
+    "quote": "Funding is applied to your position the next time it is touched, by a trade, a withdrawal or a liquidation, and everything owed since the last time is settled at once. The result is the same as paying every hour."
+  },
+  "sdkCorrection": "node_modules/@somnia-chain/markets-sdk/src/perp/history.ts: the contract's catch-up horizon charges at most one interval per settlement however long the gap, so a value below intervalsSettled means the excess was FORGIVEN at zero funding rather than deferred.",
+  "pool": {
+    "symbol": "LIT",
+    "address": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f"
+  },
+  "row": {
+    "id": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f_25760678_19",
+    "pool": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f",
+    "fundingRate": "47611326825505",
+    "cumulativeFundingPerUnit": "-3890681501169118339992454793250000",
+    "indexPrice": "3200709105575000000",
+    "markPrice": "3197413266570000000",
+    "intervalsSettled": "15",
+    "intervalsAccrued": "1",
+    "fundingWindowSec": 28800,
+    "fundingIntervalSec": 3600,
+    "spanStart": "1792223721",
+    "spanEnd": "1792227321",
+    "anchorResynced": false,
+    "timestamp": "1792227792",
+    "blockNumber": "25760678",
+    "txHash": "0x1995d52346e4d034f95fe3d942e0b7b4b68862e82f61529e5eb361bcf71d1474"
+  },
+  "computed": {
+    "settledSeconds": "54000",
+    "accruedSeconds": "3600",
+    "forgivenSeconds": "50400"
+  },
+  "claimHolds": false
+}

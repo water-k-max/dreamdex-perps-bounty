@@ -7,6 +7,10 @@
   "scripts": {
     "wallet:new": "tsx src/new-wallet.ts",
     "probe:markets": "tsx src/probe-markets.ts",
+    "probe:reads": "tsx src/probe-reads.ts",
+    "poc:voucher-allowlist": "tsx poc/docs-voucher-allowlist.ts",
+    "poc:bidder-count": "tsx poc/docs-bidder-count.ts",
+    "poc:funding-catchup": "tsx poc/docs-funding-catchup.ts",
     "typecheck": "tsc --noEmit"
   },
   "engines": {

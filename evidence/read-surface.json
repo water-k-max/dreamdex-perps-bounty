@@ -1,0 +1,282 @@
+{
+  "capturedAt": "2026-10-20T13:41:03.816Z",
+  "account": "0xa796e1f8a7aECa35086EE56658A90573fBCB0c0b",
+  "results": {
+    "getPerpPosition": {
+      "ok": true,
+      "ms": 2830,
+      "value": {
+        "size": "0",
+        "avgEntryPrice": "0",
+        "entryFundingIndex": "0",
+        "lastUpdatedTimestampNs": "0"
+      }
+    },
+    "getMarginAccount": {
+      "ok": true,
+      "ms": 908,
+      "value": {
+        "unlockedCollateralBalance": "0",
+        "lockedCollateral": "0",
+        "activePerpPools": [],
+        "equity": "0",
+        "withdrawable": "0",
+        "imReq": "0",
+        "mmReq": "0",
+        "cmReq": "0",
+        "marginStatus": "Healthy",
+        "asOfBlock": "28517134"
+      }
+    },
+    "getAccountHealth": {
+      "ok": true,
+      "ms": 393,
+      "value": {
+        "equity": "0",
+        "imReq": "0",
+        "mmReq": "0",
+        "cmReq": "0",
+        "marginStatus": "Healthy"
+      }
+    },
+    "getLiquidationPrice": {
+      "ok": true,
+      "ms": 2996,
+      "value": null
+    },
+    "listPerpPositions": {
+      "ok": true,
+      "ms": 4997,
+      "value": []
+    },
+    "listPerpPositionAnalytics": {
+      "ok": true,
+      "ms": 748,
+      "value": []
+    },
+    "listPerpOrderRejections": {
+      "ok": true,
+      "ms": 393,
+      "value": []
+    },
+    "listPerpOrderHistory": {
+      "ok": true,
+      "ms": 9212,
+      "value": []
+    },
+    "getPerpPortfolio": {
+      "ok": true,
+      "ms": 1781,
+      "value": {
+        "account": "0xa796e1f8a7aeca35086ee56658a90573fbcb0c0b",
+        "openOrders": [],
+        "trades": [],
+        "tradesTruncated": false,
+        "tradesSince": 1791898821
+      }
+    },
+    "listPerpStopOrders": {
+      "ok": true,
+      "ms": 2619,
+      "value": []
+    },
+    "getPerpVoucherCampaign": {
+      "ok": true,
+      "ms": 981,
+      "value": {
+        "distributor": "0x2ACD9EFdA721450906bfE1bef3edE269636E42C4",
+        "collateralToken": "0xed7993A74dAe1e6656B704A424DcD8711aAf4F72",
+        "grantAmount": "1000000000000000000000",
+        "expiryDurationSec": "1209600",
+        "startsAt": "1790553600",
+        "endsAt": "1798477478",
+        "budgetRemaining": "431722000000000000000000000",
+        "claimsRemaining": "431722",
+        "leverageCapX": 20
+      }
+    },
+    "getPerpVoucherEligibility": {
+      "ok": true,
+      "ms": 5188,
+      "value": {
+        "eligible": true,
+        "grantAmount": "1000000000000000000000"
+      }
+    },
+    "getPerpVoucher": {
+      "ok": true,
+      "ms": 3358,
+      "value": {
+        "claimed": false,
+        "floor": "0",
+        "expiresAt": "0"
+      }
+    },
+    "getPerpMainFunding": {
+      "ok": true,
+      "ms": 574,
+      "value": {
+        "principal": "0",
+        "payer": "0x0000000000000000000000000000000000000000",
+        "withdrawableFromPrincipal": "0"
+      }
+    },
+    "quotePerpFundingPayer": {
+      "ok": true,
+      "ms": 1217,
+      "value": {
+        "funded": false,
+        "reason": "unlinked"
+      }
+    },
+    "getPerpCollateralBasis": {
+      "ok": true,
+      "ms": 309,
+      "value": "0"
+    },
+    "getPerpWalletPullCapacity": {
+      "ok": true,
+      "ms": 321,
+      "value": "0"
+    },
+    "getPerpLinkedWalletRegistry": {
+      "ok": true,
+      "ms": 326,
+      "value": "0x5b3C5Bf1F7AdA852e8AA783f6299932E32073aFb"
+    },
+    "tryGetPerpAccountEquity": {
+      "ok": true,
+      "ms": 319,
+      "value": "0"
+    },
+    "getPerpState": {
+      "ok": true,
+      "ms": 965,
+      "value": {
+        "markPrice": "1809945711927000000",
+        "markPriceOk": true,
+        "indexPrice": "1810541140036000000",
+        "indexUpdatedAt": "1792503639",
+        "fundingRate": "100000000000000",
+        "cumulativeFundingPerUnit": "2711251690251450000000000000000000",
+        "projectedCumulativeFundingPerUnit": "2711251690251450000000000000000000",
+        "openInterest": "7849300000000000000000",
+        "fundingWindowSec": 28800,
+        "fundingIntervalSec": 3600,
+        "lastFundingUpdateAt": "1792500921",
+        "nextFundingAt": "1792504521",
+        "emaPremium": "-5067529291235",
+        "oracle": "0x505Ac3BC3A2638c06224AF75e4135871929b9Bc0"
+      }
+    },
+    "getPerpFeedStatus": {
+      "ok": true,
+      "ms": 1602,
+      "value": {
+        "markPriceOk": true,
+        "markPrice": "1810095319716000000",
+        "openInterest": "7849300000000000000000",
+        "indexUpdatedAt": "1792503640"
+      }
+    },
+    "getPerpRiskParams": {
+      "ok": true,
+      "ms": 328,
+      "value": {
+        "initialMarginBps": "2000",
+        "maintenanceMarginBps": "1000",
+        "closeOutMarginBps": "500",
+        "maxOpenInterest": "1002398000000000000000000",
+        "maxPositionSize": "25059900000000000000000",
+        "takerFeeBpsTimes1k": "0",
+        "makerFeeBpsTimes1k": "0",
+        "insuranceFundShareBps": "0"
+      }
+    },
+    "getPerpFundingPremium": {
+      "ok": true,
+      "ms": 658,
+      "value": {
+        "timeWeightedPremium": "-101307943957674",
+        "lastObservedPremium": "-272872888571506",
+        "accumulator": "-275214477675648326000000000",
+        "intervalStartNs": "1792500921000000000",
+        "observedAtNs": "1792503641000000000",
+        "validUntilNs": "1792503671000000000",
+        "armed": true
+      }
+    },
+    "getMaxPerpOrderSize": {
+      "ok": true,
+      "ms": 951,
+      "value": {
+        "priceable": true,
+        "asOfBlock": "28517531",
+        "maxQuantity": "0",
+        "unalignedMaxQuantity": "0",
+        "increasingQuantity": "0",
+        "reducingQuantity": "0",
+        "lockAmount": "0",
+        "topUpRequired": "0",
+        "wallet": null,
+        "fundingPayer": null,
+        "mainWalletCapacity": null,
+        "ownWalletPull": "0",
+        "mainWalletPull": "0",
+        "mainFundingBlocked": false,
+        "placeable": false,
+        "limitedBy": "collateral",
+        "lotSize": "100000000000000000",
+        "minQuantity": "5100000000000000000",
+        "maxPositionSize": "25059900000000000000000",
+        "positionSize": "0",
+        "markPrice": "1808267935973000000",
+        "effectiveImfBps": "2000"
+      }
+    },
+    "getPerpLeverage": {
+      "ok": true,
+      "ms": 2027,
+      "value": {
+        "asOfBlock": "28517549",
+        "size": "0",
+        "markPrice": "1809695178822000000",
+        "positionNotional": "0",
+        "accountNotional": "0",
+        "equity": "0",
+        "positionLeverageBps": null,
+        "accountLeverageBps": null,
+        "marketMaxLeverageBps": "50000",
+        "accountMaxLeverageX": 0,
+        "protocolMaxLeverageX": 20,
+        "creditFloor": "0",
+        "voucherLeverageCapX": 20,
+        "voucherMarketAllowed": true
+      }
+    },
+    "getBankruptcyPrice": {
+      "ok": false,
+      "ms": 502,
+      "error": {
+        "name": "ContractRevertError",
+        "message": "@somnia-chain/markets-sdk: getBankruptcyPrice reverted: NoOpenPosition()"
+      }
+    },
+    "previewPerpClosePnl": {
+      "ok": false,
+      "ms": 7337,
+      "error": {
+        "name": "RpcError",
+        "message": "@somnia-chain/markets-sdk: rpc readContract tryGetHealthSnapshot failed: The request took too long to respond."
+      }
+    },
+    "previewPerpLiquidationPrice": {
+      "ok": false,
+      "ms": 10589,
+      "error": {
+        "name": "RpcError",
+        "message": "@somnia-chain/markets-sdk: rpc readContract getAccountHealth failed: The request took too long to respond."
+      }
+    }
+  }
+}
