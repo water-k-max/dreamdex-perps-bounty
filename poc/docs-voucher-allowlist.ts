@@ -12,6 +12,7 @@ const DOCS_SAYS_NO = new Set(["1000PEPE", "LIT", "PUMP", "VVV", "ZEC", "ZRO"]);
 
 const marginBankAbi = parseAbi([
   "function isVoucherMarketAllowed(address perpPool) view returns (bool)",
+  "function getVoucherLeverageCap() view returns (uint256)",
 ]);
 
 const markets = createMarkets({ withSigner: false });
@@ -25,6 +26,20 @@ if (marginBanks.length !== 1) {
   throw new Error(`expected one margin bank, got ${marginBanks.join(", ")}`);
 }
 const marginBank = marginBanks[0] as Address;
+
+// The SDK derives `limitedBy: "voucherBlocked"` from BOTH triggers, not just the market
+// allowlist (perp/margin.ts:2153):
+//   voucherBlocked = voucherActive && (!voucherMarketAllowed || voucherLeverageCapX === 0)
+// with the neighbouring comment naming the two reverts VoucherMarketNotAllowed and
+// VoucherLeverageCapNotSet. Ruling out the documented failure mode therefore needs both
+// reads, so an unset leverage cap cannot be hiding a market-wide block.
+const voucherLeverageCap = await viem.readContract({
+  address: marginBank,
+  abi: marginBankAbi,
+  functionName: "getVoucherLeverageCap",
+  blockNumber,
+});
+const voucherLeverageCapUnset = voucherLeverageCap === 0n;
 
 const rows = [];
 for (const market of list) {
@@ -42,6 +57,7 @@ for (const market of list) {
     pool: market.poolAddress,
     docsPaperUsdso: docsAllows ? "Yes" : "No",
     chainIsVoucherMarketAllowed: allowed,
+    chainSdkVoucherBlocked: !allowed || voucherLeverageCapUnset,
     matches: docsAllows === allowed,
   });
 }
@@ -49,26 +65,39 @@ for (const market of list) {
 console.log(`chain 50383, block ${blockNumber}`);
 console.log(`MarginBank ${marginBank}`);
 console.log(`markets ${rows.length}`);
-console.log("symbol".padEnd(12), "docs".padEnd(6), "chain".padEnd(6), "match");
+console.log(
+  `getVoucherLeverageCap() ${voucherLeverageCap} (unset, i.e. 0: ${voucherLeverageCapUnset})`,
+);
+console.log("symbol".padEnd(12), "docs".padEnd(6), "chain".padEnd(6), "blocked".padEnd(8), "match");
 for (const row of rows) {
   console.log(
     String(row.symbol).padEnd(12),
     row.docsPaperUsdso.padEnd(6),
     String(row.chainIsVoucherMarketAllowed).padEnd(6),
+    String(row.chainSdkVoucherBlocked).padEnd(8),
     row.matches ? "yes" : "NO",
   );
 }
 
 const docsNoButChainYes = rows.filter((r) => DOCS_SAYS_NO.has(r.symbol) && r.chainIsVoucherMarketAllowed);
 const mismatches = rows.filter((r) => !r.matches);
+const blockedMarkets = rows.filter((r) => r.chainSdkVoucherBlocked);
 console.log(`\ndocs "No" but chain true: ${docsNoButChainYes.length}`);
 console.log(`mismatches: ${mismatches.length}`);
+console.log(`markets where the SDK would report voucherBlocked: ${blockedMarkets.length}`);
+console.log(
+  `=> documented voucherBlocked failure mode reachable on any current market: ${blockedMarkets.length > 0}`,
+);
 
 const snapshot = {
   capturedAt: new Date().toISOString(),
   chainId: 50383,
   blockNumber: blockNumber.toString(),
   marginBank,
+  voucherLeverageCap: voucherLeverageCap.toString(),
+  voucherLeverageCapUnset,
+  sdkVoucherBlockedPredicate:
+    "voucherActive && (!voucherMarketAllowed || voucherLeverageCapX === 0) — perp/margin.ts:2153",
   docs: {
     marketTableUrl: MARKET_TABLE_URL,
     marginAndLiquidationsUrl: DOCS_URL,
@@ -77,7 +106,12 @@ const snapshot = {
     paperUsdsoNo: [...DOCS_SAYS_NO],
   },
   rows,
-  summary: { markets: rows.length, docsNoButChainTrue: docsNoButChainYes.length, mismatches: mismatches.length },
+  summary: {
+    markets: rows.length,
+    docsNoButChainTrue: docsNoButChainYes.length,
+    mismatches: mismatches.length,
+    marketsWhereSdkVoucherBlocked: blockedMarkets.length,
+  },
 };
 writeFileSync("evidence/docs-voucher-allowlist.json", JSON.stringify(snapshot, null, 2));
 console.log("\nWrote evidence/docs-voucher-allowlist.json");

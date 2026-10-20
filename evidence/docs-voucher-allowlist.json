@@ -1,8 +1,11 @@
 {
-  "capturedAt": "2026-10-20T14:38:55.792Z",
+  "capturedAt": "2026-10-20T19:20:57.927Z",
   "chainId": 50383,
-  "blockNumber": "28552327",
+  "blockNumber": "28721461",
   "marginBank": "0x478769e1177c0773c43a593dccc4ad15f15f1394",
+  "voucherLeverageCap": "20",
+  "voucherLeverageCapUnset": false,
+  "sdkVoucherBlockedPredicate": "voucherActive && (!voucherMarketAllowed || voucherLeverageCapX === 0) — perp/margin.ts:2153",
   "docs": {
     "marketTableUrl": "https://app.testnet.dreamdex.io/docs/developers/perps-testnet",
     "marginAndLiquidationsUrl": "https://app.testnet.dreamdex.io/docs/trading/perps-testnet/margin-and-liquidations",
@@ -22,6 +25,7 @@
       "pool": "0x2a1822b02039ddf0e293f3f7243673fc03eaf16c",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -29,6 +33,7 @@
       "pool": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -36,6 +41,7 @@
       "pool": "0x352636ab146039851ef06d6367a106d5fb4e6409",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -43,6 +49,7 @@
       "pool": "0xfa9b9e50cc1745113d57893991af200a74c86b6f",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -50,6 +57,7 @@
       "pool": "0x76c981a52530cdf9497559140aafcd8cd16836e7",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -57,6 +65,7 @@
       "pool": "0x2a73129f26917124bd2a47a9b355c395c537f050",
       "docsPaperUsdso": "No",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": false
     },
     {
@@ -64,6 +73,7 @@
       "pool": "0xd9b6a347a3ae9fd6ba21179d3343f2c8a922f697",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -71,6 +81,7 @@
       "pool": "0x0f464d57c1fd839e4d87a408bbccdab8f77e6394",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -78,6 +89,7 @@
       "pool": "0x1cd15ae8bff0fe0a7f49233be8b90734775ba454",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -85,6 +97,7 @@
       "pool": "0x74b05b9b8c8f180b53b7891018f3b254b3e658c9",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -92,6 +105,7 @@
       "pool": "0xde9762b6b441133d1314c68864ae4e63a6ee45c7",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -99,6 +113,7 @@
       "pool": "0xf71b619450bafe953f47b9b556416a3a67b443b5",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -106,6 +121,7 @@
       "pool": "0x1be21287cfb865a7c462ff3c4f275e70bcccefe4",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -113,6 +129,7 @@
       "pool": "0x34fa62909f77699a7a6278d992f72ff31c7a619d",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -120,6 +137,7 @@
       "pool": "0x3d2a99fe1e2bdeaa25024515a2d2202daf9531ad",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -127,6 +145,7 @@
       "pool": "0xc410012e39765cd5f772e84bacb19554aec040df",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -134,6 +153,7 @@
       "pool": "0x7058579f3248559963f79adb937c6de9f953e060",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -141,6 +161,7 @@
       "pool": "0x63b47ed4a7de0fde659b0d82441dd74828b7297a",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -148,6 +169,7 @@
       "pool": "0xb483ec1fb34996638677c20ab087b16f1896fa53",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -155,6 +177,7 @@
       "pool": "0xd6cb1dd58580b84d76068ac21594219ce03aeddf",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     },
     {
@@ -162,12 +185,14 @@
       "pool": "0x4181dd08e73bbcdd1ba3e615a18f6abd941b94c0",
       "docsPaperUsdso": "Yes",
       "chainIsVoucherMarketAllowed": true,
+      "chainSdkVoucherBlocked": false,
       "matches": true
     }
   ],
   "summary": {
     "markets": 21,
     "docsNoButChainTrue": 6,
-    "mismatches": 6
+    "mismatches": 6,
+    "marketsWhereSdkVoucherBlocked": 0
   }
 }

@@ -11,7 +11,7 @@ Area: docs
    pnpm install
    pnpm poc:voucher-allowlist
    ```
-2. The POC lists all 21 markets from the indexer, reads `MarginBank.isVoucherMarketAllowed(pool)` at one pinned block, and compares the result with the "Paper USDso" column of the docs market table.
+2. The POC lists all 21 markets from the indexer and reads two MarginBank views at one pinned block: `isVoucherMarketAllowed(pool)` for every pool, and `getVoucherLeverageCap()`. Those are the two inputs to the SDK's own `voucherBlocked` predicate, so the POC rules out both triggers rather than assuming the allowlist is the only one. It then compares the result with the "Paper USDso" column of the docs market table.
 3. Open the market table and the Paper USDso rules:
    - https://app.testnet.dreamdex.io/docs/developers/perps-testnet
    - https://app.testnet.dreamdex.io/docs/trading/perps-testnet/margin-and-liquidations
@@ -28,34 +28,49 @@ The same page's "Common pitfalls" section describes the resulting failure mode:
 
 For those six markets, `isVoucherMarketAllowed(pool)` should return `false`, and increasing a voucher position should revert with the order size reported as `limitedBy: voucherBlocked`.
 
+The market allowlist is not the only input to that outcome. The SDK derives it in `src/perp/margin.ts:2153`:
+
+```ts
+const voucherBlocked = voucherActive && (!p.voucherMarketAllowed || p.voucherLeverageCapX === 0);
+```
+
+and the comment above it names the two distinct placement reverts, `VoucherMarketNotAllowed` and `VoucherLeverageCapNotSet`. So the documented failure mode is unreachable only if the market is allowlisted **and** the leverage cap is set; the POC checks both.
+
 ## Actual
 
-`isVoucherMarketAllowed(pool)` returns `true` for all 21 markets, including the six the docs exclude. There is no on-chain market restriction for voucher accounts on any live market, so the documented `voucherBlocked` failure mode cannot occur on any current market.
+`isVoucherMarketAllowed(pool)` returns `true` for all 21 markets, including the six the docs exclude, and `getVoucherLeverageCap()` returns `20` rather than `0`. Neither trigger of `voucherBlocked` fires on any live market, so there is no on-chain market restriction for voucher accounts and the documented `voucherBlocked` failure mode cannot occur on any current market.
 
-POC output at blocks 28528394 and 28552327 (identical in both runs):
+POC output at block 28721461 (earlier runs at blocks 28528394 and 28552327 gave the same 6/6 mismatch):
 
 ```text
-symbol       docs   chain  match
-ZRO          No     true   NO
-LIT          No     true   NO
-VVV          No     true   NO
-1000PEPE     No     true   NO
-PUMP         No     true   NO
-ZEC          No     true   NO
-TAO          Yes    true   yes
+chain 50383, block 28721461
+MarginBank 0x478769e1177c0773c43a593dccc4ad15f15f1394
+markets 21
+getVoucherLeverageCap() 20 (unset, i.e. 0: false)
+symbol       docs   chain  blocked  match
+ZRO          No     true   false    NO
+LIT          No     true   false    NO
+VVV          No     true   false    NO
+1000PEPE     No     true   false    NO
+PUMP         No     true   false    NO
+ZEC          No     true   false    NO
+TAO          Yes    true   false    yes
 ...
-BTC          Yes    true   yes
+BTC          Yes    true   false    yes
 
 docs "No" but chain true: 6
 mismatches: 6
+markets where the SDK would report voucherBlocked: 0
+=> documented voucherBlocked failure mode reachable on any current market: false
 ```
 
 ## Evidence
 
-- `evidence/docs-voucher-allowlist.json`: all 21 rows with `docsPaperUsdso`, `chainIsVoucherMarketAllowed`, pool address, and the pinned block.
-- Pinned blocks: 28528394 and 28552327, chain 50383 (reproduced twice, same result).
+- `evidence/docs-voucher-allowlist.json`: all 21 rows with `docsPaperUsdso`, `chainIsVoucherMarketAllowed`, `chainSdkVoucherBlocked`, pool address, and the pinned block, plus `voucherLeverageCap` and `voucherLeverageCapUnset`.
+- Pinned blocks: 28721461, and earlier runs at 28528394 and 28552327; chain 50383 (reproduced three times, same result).
 - MarginBank: `0x478769E1177C0773c43A593DCCc4Ad15F15F1394`.
-- Raw call: `isVoucherMarketAllowed(address perpPool) view returns (bool)` for each `poolAddress` from `listPerpMarkets`.
+- Raw calls, both pinned to the same block: `isVoucherMarketAllowed(address perpPool) view returns (bool)` for each `poolAddress` from `listPerpMarkets`, and `getVoucherLeverageCap() view returns (uint256)` → `20`.
+- SDK predicate checked against: `node_modules/@somnia-chain/markets-sdk/src/perp/margin.ts:2153`.
 - Example: ZRO pool `0x2a1822b02039ddf0e293f3f7243673fc03eaf16c` returned `true`; docs say `No`.
 
 ## Environment

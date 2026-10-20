@@ -1,6 +1,7 @@
-// The docs market table lists an open interest cap per market, and the same
-// page says each account's position cap is a tenth of it on most markets.
-// Compare both claims with pool parameters now and at the block the table
+// The docs state a per-account position cap rule -- a tenth of the market's open
+// interest cap on most markets -- on two pages, and publish the open interest caps
+// themselves in a market table that carries a "can be retuned at any time" disclaimer.
+// Compare the rule and the table with pool parameters now and at the block the table
 // values match. Read-only: no signer, no writes.
 import { writeFileSync } from "node:fs";
 import { createPublicClient, formatUnits, http, parseAbi, parseUnits } from "viem";
@@ -8,9 +9,16 @@ import { hidekiTestnet } from "@somnia-chain/markets-sdk/chains";
 import { createMarkets } from "../src/sdk.js";
 import { config } from "../src/config.js";
 
+// The position-cap RULE, from the "Common pitfalls" section. Not disclaimed as tunable.
 const DOCS_URL = "https://app.testnet.dreamdex.io/docs/developers/perps-testnet";
 const DOCS_QUOTE =
   "Each account has a position cap per market, a tenth of the market's open interest cap on most markets. An order that would take the account past it reverts with MaxPositionSizeExceeded() (0x714b36d6); getMaxPerpOrderSize reports the cap as maxPositionSize.";
+
+// The market TABLE the rule's denominator comes from, and the note printed under it.
+const TABLE_URL = "https://app.testnet.dreamdex.io/docs/trading/perps-testnet";
+const TABLE_TENTH_QUOTE =
+  "The open interest cap is market-wide, across every account, and is held in the base asset. A single account is capped at a tenth of it on most markets.";
+const TABLE_DISCLAIMER = "These figures are read from the live markets and can be retuned at any time.";
 
 // "Open interest cap" column, fetched 2026-10-20.
 const DOCS_OI_CAP: Record<string, string> = {
@@ -131,7 +139,8 @@ console.log(`docs OI cap matches chain at block ${DOCS_SNAPSHOT_BLOCK}: ${snapsh
 console.log(`docs OI cap matches chain now: ${currentMatches}/${rows.length}`);
 console.log(`OI multiplier now (docs -> chain): ${JSON.stringify(multipliers)}`);
 console.log(`cap is exactly one tenth of current OI cap: ${tenth}/${rows.length}`);
-console.log(`docs claim ("a tenth ... on most markets") holds: ${tenth > rows.length / 2}`);
+console.log(`RULE claim ("a tenth ... on most markets") holds: ${tenth > rows.length / 2}`);
+console.log(`TABLE disclaimer on ${TABLE_URL}: "${TABLE_DISCLAIMER}"`);
 
 const snapshot = {
   capturedAt: new Date().toISOString(),
@@ -139,11 +148,16 @@ const snapshot = {
   blockNumber: blockNumber.toString(),
   docsSnapshotBlock: DOCS_SNAPSHOT_BLOCK.toString(),
   docs: {
-    url: DOCS_URL,
-    tableFetchedAt: "2026-10-20",
+    ruleUrl: DOCS_URL,
+    ruleSection: "Common pitfalls",
     rowQuote:
       "Each account has a position cap per market, a tenth of the market's open interest cap on most markets.",
     quote: DOCS_QUOTE,
+    tableUrl: TABLE_URL,
+    tableSection: "Markets",
+    tableFetchedAt: "2026-10-20",
+    tableTenthQuote: TABLE_TENTH_QUOTE,
+    tableDisclaimer: TABLE_DISCLAIMER,
   },
   rows,
   summary: {

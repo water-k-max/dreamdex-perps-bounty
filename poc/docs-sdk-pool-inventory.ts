@@ -151,9 +151,14 @@ async function readDeployment(dep: (typeof deployments)[number]) {
   };
 }
 
-const results = [];
+type DeploymentResult = Awaited<ReturnType<typeof readDeployment>> & {
+  introMatches: boolean;
+  matches: boolean;
+};
+
+const results: DeploymentResult[] = [];
 for (const dep of deployments) {
-  results.push(await readDeployment(dep));
+  results.push({ ...(await readDeployment(dep)), introMatches: false, matches: false });
 }
 
 const sdkPkg = JSON.parse(readFileSync(SDK_PACKAGE, "utf8")) as { version: string };
