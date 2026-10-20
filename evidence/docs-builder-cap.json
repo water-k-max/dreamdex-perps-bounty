@@ -1,0 +1,130 @@
+{
+  "capturedAt": "2026-10-20T17:40:43.611Z",
+  "chainId": 50383,
+  "blockNumber": "28661364",
+  "factory": "0xE631fAEE547baeE07353E290f0562ea67d856560",
+  "docs": {
+    "errorsUrl": "https://app.testnet.dreamdex.io/docs/developers/contracts/errors.md",
+    "functionsUrl": "https://app.testnet.dreamdex.io/docs/developers/contracts/functions.md",
+    "quotes": {
+      "errors": "Every mainnet and testnet pool currently runs a `100000` (100 BPS) cap",
+      "everyPool": "the cap is `100000` (100 BPS = 1%) on every pool on both networks",
+      "testnetZero": "Currently `100000` (100 BPS = 1%) on mainnet and `0` on testnet."
+    }
+  },
+  "chain": {
+    "perp": [
+      {
+        "pool": "0x4181dd08E73BbCdd1Ba3E615A18f6abD941b94C0",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xD6Cb1DD58580B84D76068aC21594219ce03aeddf",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xB483ec1fb34996638677c20ab087b16F1896FA53",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x63B47eD4A7DE0FdE659b0d82441dD74828b7297A",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x7058579F3248559963f79AdB937c6De9f953E060",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xC410012e39765Cd5f772e84BAcB19554AEC040Df",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x3D2A99fE1e2BdEaA25024515A2D2202DAF9531aD",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x34fa62909f77699a7a6278D992F72Ff31c7a619D",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x1Be21287cfB865a7c462Ff3c4f275E70BcccefE4",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xf71b619450baFe953F47b9b556416A3A67b443b5",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xde9762B6b441133D1314C68864ae4e63A6eE45C7",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x74b05B9B8c8F180b53b7891018F3B254B3E658C9",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x1cD15ae8bFf0FE0a7F49233BE8b90734775bA454",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x0F464d57c1FD839E4d87A408BBcCDAb8f77E6394",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xD9b6A347A3Ae9FD6BA21179D3343F2c8A922F697",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x2a73129F26917124bd2A47a9B355C395C537F050",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x76c981a52530cdF9497559140aAfCd8CD16836E7",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xfA9B9e50CC1745113d57893991aF200a74c86B6f",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x352636aB146039851Ef06D6367A106d5FB4E6409",
+        "cap": "10000"
+      },
+      {
+        "pool": "0xDCb0Ad226727b2cE92857F0aF5751389d42B2A3f",
+        "cap": "10000"
+      },
+      {
+        "pool": "0x2a1822b02039DDf0e293F3F7243673fc03EAF16c",
+        "cap": "10000"
+      }
+    ],
+    "spot": [
+      {
+        "pool": "0xfd87d984bcdd276c3c411c2590acb6a7ff8ab4ff",
+        "cap": "100000"
+      },
+      {
+        "pool": "0xbe6c45bf96e1b4e5ec4655bdae0f23c0410db35d",
+        "cap": "100000"
+      },
+      {
+        "pool": "0xd61bb202984e4c02dd6dbf51489a7ec6144e7aa0",
+        "cap": "100000"
+      }
+    ],
+    "capCounts": {
+      "10000": 21,
+      "100000": 3
+    }
+  },
+  "summary": {
+    "pools": 24,
+    "everyPoolIs100k": false,
+    "everyPoolIsZero": false,
+    "perpAll10k": true,
+    "spotAll100k": true,
+    "perpPoolsViolatingEveryPoolClaim": 21,
+    "poolsViolatingTestnetZeroClaim": 24
+  }
+}

@@ -14,6 +14,7 @@
     "poc:risk-limits": "tsx poc/docs-risk-limits.ts",
     "poc:gas-claim": "tsx poc/docs-gas-claim.ts",
     "poc:sdk-pool-inventory": "tsx poc/docs-sdk-pool-inventory.ts",
+    "poc:builder-cap": "tsx poc/docs-builder-cap.ts",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
