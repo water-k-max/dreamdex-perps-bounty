@@ -1,0 +1,27 @@
+{
+  "name": "dreamdex-perps-bounty",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reproducible feedback for the dreamDEX Perps Builder Bounty (Hideki testnet)",
+  "scripts": {
+    "wallet:new": "tsx src/new-wallet.ts",
+    "probe:markets": "tsx src/probe-markets.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@somnia-chain/markets-sdk": "0.32.1",
+    "dotenv": "^18.0.8",
+    "viem": "^2.57.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "ws": "^8.22.0"
+  }
+}
