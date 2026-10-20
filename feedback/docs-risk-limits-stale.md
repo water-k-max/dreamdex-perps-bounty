@@ -51,7 +51,7 @@ Against the current on-chain OI cap, the per-account cap is 2.49%–25.00% of op
 | 20.25% | BTC |
 | 25.00% | ZEC |
 
-The table values do not rescue the claim either: because they are stale, the real per-account cap is larger than a tenth of the table value on most markets, not equal to it.
+The stale table cannot be used to recover the rule either: because it understates open interest, a tenth of the table value is off by 2x–10x on many markets. ZEC is the clearest case — the table says 420 ZEC, so a tenth is 42 ZEC, while the actual per-account cap is 420 ZEC.
 
 Concrete example, BTC:
 
