@@ -142,6 +142,7 @@ BaseToken.symbol() view returns (string)
 - Networks: Somnia Hideki testnet, chain ID 50383, and Somnia Shannon testnet,
   chain ID 50312
 - Read-only: no signer, no wallet, no transactions
+- Wallet: `0xa796e1f8a7aECa35086EE56658A90573fBCB0c0b` (not used by the POC)
 - Blocks: Hideki 28694838 and 28695209 (SDK listing runs bounded
   28695027–28695057 and 28695312–28695348); Shannon 519473223 and 519473521
 - RPC: `https://api.hideki2.infra.testnet.somnia.network` and
