@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-20T14:39:28.250Z",
+  "capturedAt": "2026-10-20T17:15:26.745Z",
   "chainId": 50383,
   "docs": {
     "url": "https://app.testnet.dreamdex.io/docs/trading/perps-testnet/funding",
@@ -32,6 +32,19 @@
     "settledSeconds": "54000",
     "accruedSeconds": "3600",
     "forgivenSeconds": "50400"
+  },
+  "onChain": {
+    "settlementBlock": "25760678",
+    "anchorBefore": "1792173321000000000",
+    "anchorAfter": "1792227321000000000",
+    "anchorJumpSeconds": "54000",
+    "cumulativeBefore": "-3909730252081480979073416090125000",
+    "cumulativeAfter": "-3890681501169118339992454793250000",
+    "cumulativeDelta": "19048750912362639080961296875000",
+    "oneIntervalCharge": "19048750912362639080961296875000",
+    "allIntervalsCharge": "285731263685439586214419453125000",
+    "chargedOneInterval": true,
+    "chargedAllIntervals": false
   },
   "claimHolds": false
 }

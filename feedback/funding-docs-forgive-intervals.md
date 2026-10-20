@@ -12,7 +12,8 @@ Area: docs
    pnpm poc:funding-catchup
    ```
 2. The POC reads the `LIT-PERP` funding history from the public indexer and prints the settlement at 2026-10-17T09:03:12Z (block 25760678), whose row has `intervalsSettled=15` and `intervalsAccrued=1`.
-3. Open the funding docs page and read the paragraph beginning "Funding is applied to your position the next time it is touched":
+3. It then reads the pool's own state at blocks 25760677 and 25760678: `getLastFundingUpdateTimestampNs()` and `getCumulativeFundingPerUnit()`. The anchor jumps 54,000 seconds (15 intervals) while the cumulative funding index moves by exactly one interval's charge.
+4. Open the funding docs page and read the paragraph beginning "Funding is applied to your position the next time it is touched":
    https://app.testnet.dreamdex.io/docs/trading/perps-testnet/funding
 
 ## Expected
@@ -35,6 +36,10 @@ For the LIT settlement:
 - accrued span: 3,600 seconds
 - forgiven: 50,400 seconds (14 hourly intervals)
 
+The contract's own state confirms the indexed row. `getLastFundingUpdateTimestampNs()` is `1792173321000000000` (2026-10-16T17:55:21Z) at block 25760677 and `1792227321000000000` (2026-10-17T08:55:21Z) at block 25760678, so the anchor advanced 54,000 seconds, or 15 intervals. Over the same blocks `getCumulativeFundingPerUnit()` moved from `-3909730252081480979073416090125000` to `-3890681501169118339992454793250000`, a delta of `19048750912362639080961296875000`.
+
+At the row's `fundingRate` (`47611326825505`) and `indexPrice` (`3200709105575000000`), one interval's charge is `19048750912362639080961296875000` and 15 intervals would be `285731263685439586214419453125000`. The on-chain delta equals exactly one interval, so the other 14 were forgiven rather than deferred.
+
 The same pattern is visible in other markets' indexed settlements, so this is not a one-off. A trader who expects to pay or receive all 15 hours of funding after a gap is charged or paid for one hour.
 
 ## Evidence
@@ -51,10 +56,23 @@ intervalsSettled=15 intervalsAccrued=1
 spanStart=1792223721 spanEnd=1792227321
 settled span 54000s (15 intervals)
 accrued span 3600s; forgiven 50400s
+on-chain anchor 1792173321000000000 -> 1792227321000000000 (jump 54000s = 15 intervals)
+on-chain cumulative funding delta 19048750912362639080961296875000
+one interval at row rate 19048750912362639080961296875000; 15 intervals 285731263685439586214419453125000
+=> charged exactly one interval: true; charged every interval: false
+
+docs claim: "everything owed since the last time is settled at once. The result is the same as paying every hour."
 => claim holds: false
 ```
 
-Raw row and computed values: [`evidence/docs-funding-catchup.json`](../evidence/docs-funding-catchup.json).
+Raw row, computed values, and both block-pinned contract reads: [`evidence/docs-funding-catchup.json`](../evidence/docs-funding-catchup.json).
+
+Contract calls at blocks 25760677 and 25760678, pool `0xdcb0ad226727b2ce92857f0af5751389d42b2a3f`:
+
+```text
+getLastFundingUpdateTimestampNs() view returns (uint64)
+getCumulativeFundingPerUnit() view returns (int256)
+```
 
 SDK source that contradicts the docs (`node_modules/@somnia-chain/markets-sdk/src/perp/history.ts`, `intervalsAccrued`):
 
