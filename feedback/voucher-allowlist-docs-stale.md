@@ -22,11 +22,15 @@ The docs market table marks `1000PEPE`, `LIT`, `PUMP`, `VVV`, `ZEC` and `ZRO` as
 
 > You can open or increase positions only in the markets marked Yes under Paper USDso in the market table. The six newest markets are not on that list.
 
-For those six markets, `isVoucherMarketAllowed(pool)` should return `false`.
+The same page's "Common pitfalls" section describes the resulting failure mode:
+
+> Paper USDso blocks some markets. Increasing a position in a market outside the credit's allowlist reverts, and getMaxPerpOrderSize reports it as limitedBy: voucherBlocked.
+
+For those six markets, `isVoucherMarketAllowed(pool)` should return `false`, and increasing a voucher position should revert with the order size reported as `limitedBy: voucherBlocked`.
 
 ## Actual
 
-`isVoucherMarketAllowed(pool)` returns `true` for all 21 markets, including the six the docs exclude. There is no on-chain market restriction for voucher accounts on any live market.
+`isVoucherMarketAllowed(pool)` returns `true` for all 21 markets, including the six the docs exclude. There is no on-chain market restriction for voucher accounts on any live market, so the documented `voucherBlocked` failure mode cannot occur on any current market.
 
 POC output at blocks 28528394 and 28552327 (identical in both runs):
 

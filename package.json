@@ -11,6 +11,7 @@
     "poc:voucher-allowlist": "tsx poc/docs-voucher-allowlist.ts",
     "poc:bidder-count": "tsx poc/docs-bidder-count.ts",
     "poc:funding-catchup": "tsx poc/docs-funding-catchup.ts",
+    "poc:position-cap": "tsx poc/docs-position-cap.ts",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
