@@ -1,0 +1,81 @@
+{
+  "capturedAt": "2026-10-20T16:54:08.726Z",
+  "chainId": 50383,
+  "docs": {
+    "url": "https://app.testnet.dreamdex.io/docs/developers/perps-testnet",
+    "costQuote": "Transactions to perp pools measured on testnet cost between 0.0003 and 0.003 STT each.",
+    "gasQuote": "Successful placeOrderFor transactions used up to about 1.56M gas; recommended limit 10,000,000.",
+    "documentedCostRangeStt": [
+      "0.0003",
+      "0.003"
+    ],
+    "documentedGasCeiling": "1560000"
+  },
+  "rows": [
+    {
+      "hash": "0x8d77ce0a697997d99b4bb3f87c9b3ce722f78c13ed8b6ff24963a4974c938cc0",
+      "symbol": "LIT",
+      "pool": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f",
+      "blockNumber": "27821051",
+      "gasUsed": "4853918",
+      "gasPriceGwei": "6",
+      "feeWei": "29123508000000000",
+      "feeStt": "0.029123508",
+      "feeAboveDocsMax": true,
+      "gasAboveDocsMax": true
+    },
+    {
+      "hash": "0x6ba52e192185afe272c79680537c68b184431ff8f4abf3e74daebeb8465567ac",
+      "symbol": "LIT",
+      "pool": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f",
+      "blockNumber": "27986878",
+      "gasUsed": "3963483",
+      "gasPriceGwei": "6",
+      "feeWei": "23780898000000000",
+      "feeStt": "0.023780898",
+      "feeAboveDocsMax": true,
+      "gasAboveDocsMax": true
+    },
+    {
+      "hash": "0xd1b752fb21a8119e6c57900b226d1463ff081d2d83372871df3c633e1aa1b877",
+      "symbol": "LIT",
+      "pool": "0xdcb0ad226727b2ce92857f0af5751389d42b2a3f",
+      "blockNumber": "28552762",
+      "gasUsed": "4062881",
+      "gasPriceGwei": "6",
+      "feeWei": "24377286000000000",
+      "feeStt": "0.024377286",
+      "feeAboveDocsMax": true,
+      "gasAboveDocsMax": true
+    },
+    {
+      "hash": "0xabfb5acfd5ce13721feeaa46dd16db55ee13172aaecad272eb9365e2af7166bb",
+      "symbol": "ADA",
+      "pool": "0x34fa62909f77699a7a6278d992f72ff31c7a619d",
+      "blockNumber": "28626845",
+      "gasUsed": "1529508",
+      "gasPriceGwei": "0.6",
+      "feeWei": "917704800000000",
+      "feeStt": "0.0009177048",
+      "feeAboveDocsMax": false,
+      "gasAboveDocsMax": false
+    }
+  ],
+  "summary": {
+    "transactions": 4,
+    "aboveGasCeiling": 3,
+    "aboveCostRange": 3,
+    "highestGas": {
+      "hash": "0x8d77ce0a697997d99b4bb3f87c9b3ce722f78c13ed8b6ff24963a4974c938cc0",
+      "symbol": "LIT",
+      "gasUsed": "4853918"
+    },
+    "highestFee": {
+      "hash": "0x8d77ce0a697997d99b4bb3f87c9b3ce722f78c13ed8b6ff24963a4974c938cc0",
+      "symbol": "LIT",
+      "feeStt": "0.029123508"
+    },
+    "costClaimHolds": false,
+    "gasClaimHolds": false
+  }
+}
