@@ -13,6 +13,7 @@
     "poc:funding-catchup": "tsx poc/docs-funding-catchup.ts",
     "poc:risk-limits": "tsx poc/docs-risk-limits.ts",
     "poc:gas-claim": "tsx poc/docs-gas-claim.ts",
+    "poc:sdk-pool-inventory": "tsx poc/docs-sdk-pool-inventory.ts",
     "typecheck": "tsc --noEmit"
   },
   "engines": {

@@ -1,0 +1,228 @@
+{
+  "capturedAt": "2026-10-20T17:35:08.991Z",
+  "chainId": 50383,
+  "blockNumber": "28658075",
+  "factory": "0xE631fAEE547baeE07353E290f0562ea67d856560",
+  "docs": {
+    "file": "node_modules/@somnia-chain/markets-sdk/docs/PERPS.md",
+    "line": 571,
+    "sdkVersion": "0.32.1",
+    "quote": "Testnet today has 10 pools, four of them restricted `SBTC*` arena markets.",
+    "statedPools": 10,
+    "statedRestricted": 4,
+    "statedRestrictedSbTc": true
+  },
+  "rawGetPerpPoolsCount": 21,
+  "chain": {
+    "statusesCount": 21,
+    "restrictedCount": 0,
+    "registeredCount": 21,
+    "tradeableCount": 21,
+    "sbtcCount": 0,
+    "rows": [
+      {
+        "symbol": "BTC",
+        "pool": "0x4181dd08E73BbCdd1Ba3E615A18f6abD941b94C0",
+        "baseToken": "0xa77fA353dAC50DE5c15676AC910C221A4d2Bd6b5",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "ETH",
+        "pool": "0xD6Cb1DD58580B84D76068aC21594219ce03aeddf",
+        "baseToken": "0x1516CcebcA301d0651bc27dCDF9b1c2f18C3b4cd",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "SOL",
+        "pool": "0xB483ec1fb34996638677c20ab087b16F1896FA53",
+        "baseToken": "0x83B066da8e10839f3683C0b46943357B2cBf629E",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "HYPE",
+        "pool": "0x63B47eD4A7DE0FdE659b0d82441dD74828b7297A",
+        "baseToken": "0x32d7D9B4e07fE76382Dbd9f3C7BeE3b513505B87",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "XRP",
+        "pool": "0x7058579F3248559963f79AdB937c6De9f953E060",
+        "baseToken": "0xE4DDba6C087Ba15298eCe0939F6D69A5d5542FAd",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "DOGE",
+        "pool": "0xC410012e39765Cd5f772e84BAcB19554AEC040Df",
+        "baseToken": "0x683e4fb09e078B6E4eF914cC64f68103Ae2CFF54",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "BNB",
+        "pool": "0x3D2A99fE1e2BdEaA25024515A2D2202DAF9531aD",
+        "baseToken": "0x667954B7eB08f608f5454b91bFD98c2C78A3Aca8",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "ADA",
+        "pool": "0x34fa62909f77699a7a6278D992F72Ff31c7a619D",
+        "baseToken": "0xB987a674df44E929e5E7a0c1157da9Ad669447e0",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "SUI",
+        "pool": "0x1Be21287cfB865a7c462Ff3c4f275E70BcccefE4",
+        "baseToken": "0x3b2b65C0224343522B17E960282952470F643830",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "LINK",
+        "pool": "0xf71b619450baFe953F47b9b556416A3A67b443b5",
+        "baseToken": "0xB2221107e55a53409cef0E83ED1b29c8879D0f72",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "AVAX",
+        "pool": "0xde9762B6b441133D1314C68864ae4e63A6eE45C7",
+        "baseToken": "0x771ADa7EEb4ba277cD3e5f184baf71E59C78cc65",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "XLM",
+        "pool": "0x74b05B9B8c8F180b53b7891018F3B254B3E658C9",
+        "baseToken": "0xbCdED4e7B8C4EB0A01f632e2C283ca3C8A9a141a",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "NEAR",
+        "pool": "0x1cD15ae8bFf0FE0a7F49233BE8b90734775bA454",
+        "baseToken": "0xC772E0E3331bae405824038996CEcce9a2206cf3",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "WLD",
+        "pool": "0x0F464d57c1FD839E4d87A408BBcCDAb8f77E6394",
+        "baseToken": "0x3B5caa24D95C67337e79E7B77F7d65d06f823732",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "TAO",
+        "pool": "0xD9b6A347A3Ae9FD6BA21179D3343F2c8A922F697",
+        "baseToken": "0x2533113591243cD476930aEA327Eace664639b85",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "ZEC",
+        "pool": "0x2a73129F26917124bd2A47a9B355C395C537F050",
+        "baseToken": "0xef2F5E45582C879637cD537345c0e3147FCdBc24",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "PUMP",
+        "pool": "0x76c981a52530cdF9497559140aAfCd8CD16836E7",
+        "baseToken": "0x6c4a5181878ABE585Fd1Ff4D1070FD95AeA004Eb",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "1000PEPE",
+        "pool": "0xfA9B9e50CC1745113d57893991aF200a74c86B6f",
+        "baseToken": "0x9f1f14Bc9B603dCcd13B33004ef08345941Be1c0",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "VVV",
+        "pool": "0x352636aB146039851Ef06D6367A106d5FB4E6409",
+        "baseToken": "0xe70769Fa334C05277742531A27c774B93322c345",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "LIT",
+        "pool": "0xDCb0Ad226727b2cE92857F0aF5751389d42B2A3f",
+        "baseToken": "0xDD27064967CaDba80f177BF692f6d2901cbf85F6",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      },
+      {
+        "symbol": "ZRO",
+        "pool": "0x2a1822b02039DDf0e293F3F7243673fc03EAF16c",
+        "baseToken": "0xCAacB7C35A41f4E188a54FB074daF4fA09538BE0",
+        "marginBank": "0x478769E1177C0773c43A593DCCc4Ad15F15F1394",
+        "restricted": false,
+        "registered": true,
+        "tradeable": true
+      }
+    ]
+  },
+  "sdkListPerpPoolStatuses": {
+    "blockRange": [
+      "28658092",
+      "28658106"
+    ],
+    "count": 21,
+    "restrictedCount": 0,
+    "tradeableCount": 21
+  },
+  "summary": {
+    "matches": false,
+    "poolCountDelta": 11,
+    "restrictedCountDelta": -4
+  }
+}
