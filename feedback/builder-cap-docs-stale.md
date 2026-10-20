@@ -63,7 +63,7 @@ docs https://app.testnet.dreamdex.io/docs/developers/contracts/functions.md
   "the cap is `100000` (100 BPS = 1%) on every pool on both networks"
   "Currently `100000` (100 BPS = 1%) on mainnet and `0` on testnet."
 
-chain 50383, block 28661041
+chain 50383, block 28668971
 perp pools: 21, caps {"10000":21}
 spot pools: 3, caps {"100000":3}
 
@@ -76,7 +76,7 @@ spot pools all cap at 100000:              true
 Second run (fresh process, later block):
 
 ```text
-chain 50383, block 28661364
+chain 50383, block 28669132
 perp pools: 21, caps {"10000":21}
 spot pools: 3, caps {"100000":3}
 all 24 testnet pools cap at 100000: false
@@ -99,6 +99,6 @@ Pool.getMaxBuilderFeeBpsTimes1k() view returns (uint256)
 - SDK `@somnia-chain/markets-sdk` 0.32.1 (pinned)
 - Network: Somnia Tokyo testnet (Hideki), chain ID 50383
 - Read-only: no signer, no wallet, no transactions
-- Blocks: 28661041 and 28661364
+- Blocks: 28668971 and 28669132
 - RPC: `https://api.hideki2.infra.testnet.somnia.network`
 - Docs: `https://app.testnet.dreamdex.io/docs/developers/contracts/{errors,functions}.md`

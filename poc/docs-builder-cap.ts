@@ -2,9 +2,11 @@
 // the testnet cap is 0. On chain, all 21 perp pools cap at 10000 (10 BPS) and all 3 spot
 // pools at 100000. Read-only: no signer, no writes; every chain read is pinned.
 import { writeFileSync } from "node:fs";
-import { parseAbi, type Address } from "viem";
+import { createPublicClient, http, parseAbi, type Address } from "viem";
 import { SOMNIA_HIDEKI_TESTNET_ADDRESSES } from "@somnia-chain/markets-sdk";
+import { hidekiTestnet } from "@somnia-chain/markets-sdk/chains";
 import { createMarkets } from "../src/sdk.js";
+import { config } from "../src/config.js";
 
 const ERRORS_URL = "https://app.testnet.dreamdex.io/docs/developers/contracts/errors.md";
 const FUNCTIONS_URL = "https://app.testnet.dreamdex.io/docs/developers/contracts/functions.md";
@@ -36,7 +38,7 @@ const capAbi = parseAbi(["function getMaxBuilderFeeBpsTimes1k() view returns (ui
 const factory = SOMNIA_HIDEKI_TESTNET_ADDRESSES.perpPoolFactory as Address;
 const markets = createMarkets({ withSigner: false });
 const client = markets.client;
-const viem = client.getViemClient();
+const viem = createPublicClient({ chain: hidekiTestnet, transport: http(config.rpcUrl) });
 const blockNumber = await viem.getBlockNumber();
 
 const statuses = await viem.readContract({

@@ -1,9 +1,11 @@
 // The SDK's own PERPS.md says testnet has 10 pools, four restricted SBTC* markets.
 // Read-only: no signer, no writes. Every chain read is pinned to one block.
 import { readFileSync, writeFileSync } from "node:fs";
-import { parseAbi, type Address } from "viem";
+import { createPublicClient, http, parseAbi, type Address } from "viem";
 import { SOMNIA_HIDEKI_TESTNET_ADDRESSES } from "@somnia-chain/markets-sdk";
+import { hidekiTestnet } from "@somnia-chain/markets-sdk/chains";
 import { createMarkets } from "../src/sdk.js";
+import { config } from "../src/config.js";
 
 const DOC_PATH = "node_modules/@somnia-chain/markets-sdk/docs/PERPS.md";
 const SDK_PACKAGE = "node_modules/@somnia-chain/markets-sdk/package.json";
@@ -11,11 +13,15 @@ const SDK_PACKAGE = "node_modules/@somnia-chain/markets-sdk/package.json";
 const docLines = readFileSync(DOC_PATH, "utf8").split("\n");
 const docLineIndex = docLines.findIndex((line) => line.includes("Testnet today has"));
 if (docLineIndex < 0) throw new Error(`claim not found in ${DOC_PATH}`);
+const introLineIndex = docLines.findIndex((line) => line.includes("Perps are live on testnet:"));
+if (introLineIndex < 0) throw new Error(`intro claim not found in ${DOC_PATH}`);
 const flatDoc = docLines.join(" ").replace(/\s+/g, " ");
 const quote = flatDoc.match(
   /Testnet today has \d+ pools, four of them restricted `SBTC\*` arena markets\./,
 )?.[0];
 if (!quote) throw new Error(`could not parse the pool-inventory sentence in ${DOC_PATH}`);
+const introQuote = "Perps are live on testnet: `BTC/USDSO:USDSO` and `ETH/USDSO:USDSO`";
+if (!flatDoc.includes(introQuote)) throw new Error(`intro sentence changed in ${DOC_PATH}`);
 
 const factoryAbi = parseAbi([
   "function getPerpPools() view returns (address[])",
@@ -28,7 +34,8 @@ const erc20Abi = parseAbi(["function symbol() view returns (string)"]);
 const factory = SOMNIA_HIDEKI_TESTNET_ADDRESSES.perpPoolFactory as Address;
 const markets = createMarkets({ withSigner: false });
 const client = markets.client;
-const viem = client.getViemClient();
+// Direct reads use HTTP so the POC does not depend on the SDK's WebSocket staying up.
+const viem = createPublicClient({ chain: hidekiTestnet, transport: http(config.rpcUrl) });
 
 const blockNumber = await viem.getBlockNumber();
 const [rawPools, statuses] = await Promise.all([
@@ -86,10 +93,13 @@ const tradeable = rows.filter((row) => row.tradeable);
 const sbtc = rows.filter((row) => row.symbol?.startsWith("SBTC"));
 const sdkRestricted = sdkStatuses.filter((status) => status.restricted);
 const sdkTradeable = sdkStatuses.filter((status) => status.tradeable);
+const sdkUndetermined = sdkStatuses.filter((status) => status.tradeable === null).length;
 
 const sdkPkg = JSON.parse(readFileSync(SDK_PACKAGE, "utf8")) as { version: string };
 
-console.log(`SDK ${sdkPkg.version} ${DOC_PATH}:${docLineIndex + 1}`);
+console.log(`SDK ${sdkPkg.version} ${DOC_PATH}:${introLineIndex + 1}`);
+console.log(`  "${introQuote}"`);
+console.log(`${DOC_PATH}:${docLineIndex + 1}`);
 console.log(`  "${quote}"`);
 console.log(`\nchain 50383, block ${blockNumber}`);
 console.log(`factory ${factory}`);
@@ -110,13 +120,16 @@ for (const row of rows) {
 }
 console.log(
   `\nSDK listPerpPoolStatuses(): ${sdkStatuses.length} pools, ${sdkRestricted.length} restricted, ` +
-    `${sdkTradeable.length} tradeable (blocks ${sdkBlockBefore}..${sdkBlockAfter})`,
+    `${sdkTradeable.length} tradeable, ${sdkUndetermined} undetermined (blocks ${sdkBlockBefore}..${sdkBlockAfter})`,
 );
 
 const docsPools = Number(quote.match(/has (\d+) pools/)?.[1]);
 const docsRestricted = 4;
+const introMarkets = ["BTC", "ETH"];
+const introMatches = rows.length === introMarkets.length && introMarkets.every((symbol) => rows.some((row) => row.symbol === symbol));
 const matches = docsPools === rows.length && docsRestricted === restricted.length;
-console.log(`\ndocs pools ${docsPools} vs chain ${rows.length}; docs restricted ${docsRestricted} vs chain ${restricted.length}`);
+console.log(`\ndocs intro names ${introMarkets.length} markets vs chain ${rows.length}; intro matches: ${introMatches}`);
+console.log(`docs pools ${docsPools} vs chain ${rows.length}; docs restricted ${docsRestricted} vs chain ${restricted.length}`);
 console.log(`=> docs match chain: ${matches}`);
 
 const snapshot = {
@@ -127,11 +140,14 @@ const snapshot = {
   docs: {
     file: DOC_PATH,
     line: docLineIndex + 1,
+    introLine: introLineIndex + 1,
     sdkVersion: sdkPkg.version,
     quote,
+    introQuote,
     statedPools: docsPools,
     statedRestricted: docsRestricted,
     statedRestrictedSbTc: true,
+    introStatedMarkets: introMarkets,
   },
   rawGetPerpPoolsCount: rawPools.length,
   chain: {
@@ -147,9 +163,12 @@ const snapshot = {
     count: sdkStatuses.length,
     restrictedCount: sdkRestricted.length,
     tradeableCount: sdkTradeable.length,
+    undeterminedCount: sdkUndetermined,
   },
   summary: {
     matches,
+    introMatches,
+    liveMarketCount: rows.length,
     poolCountDelta: rows.length - docsPools,
     restrictedCountDelta: restricted.length - docsRestricted,
   },

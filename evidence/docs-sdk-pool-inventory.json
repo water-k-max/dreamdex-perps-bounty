@@ -1,16 +1,22 @@
 {
-  "capturedAt": "2026-10-20T17:35:08.991Z",
+  "capturedAt": "2026-10-20T17:52:53.658Z",
   "chainId": 50383,
-  "blockNumber": "28658075",
+  "blockNumber": "28668621",
   "factory": "0xE631fAEE547baeE07353E290f0562ea67d856560",
   "docs": {
     "file": "node_modules/@somnia-chain/markets-sdk/docs/PERPS.md",
     "line": 571,
+    "introLine": 3,
     "sdkVersion": "0.32.1",
     "quote": "Testnet today has 10 pools, four of them restricted `SBTC*` arena markets.",
+    "introQuote": "Perps are live on testnet: `BTC/USDSO:USDSO` and `ETH/USDSO:USDSO`",
     "statedPools": 10,
     "statedRestricted": 4,
-    "statedRestrictedSbTc": true
+    "statedRestrictedSbTc": true,
+    "introStatedMarkets": [
+      "BTC",
+      "ETH"
+    ]
   },
   "rawGetPerpPoolsCount": 21,
   "chain": {
@@ -213,15 +219,18 @@
   },
   "sdkListPerpPoolStatuses": {
     "blockRange": [
-      "28658092",
-      "28658106"
+      "28668689",
+      "28668727"
     ],
     "count": 21,
     "restrictedCount": 0,
-    "tradeableCount": 21
+    "tradeableCount": 21,
+    "undeterminedCount": 0
   },
   "summary": {
     "matches": false,
+    "introMatches": false,
+    "liveMarketCount": 21,
     "poolCountDelta": 11,
     "restrictedCountDelta": -4
   }
